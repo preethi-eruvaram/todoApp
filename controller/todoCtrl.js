@@ -98,12 +98,12 @@ myTodoApp.controller('myTodoController', function ($scope, $routeParams, $filter
 		var incompletedTodos = [];
 		$scope.todos.forEach(function (todo) {
 			if (todo.completed) {
-				completeTodos.push(todo);
+				completedTodos.push(todo);
 			} else {
-				incompleteTodos.push(todo);
+				incompletedTodos.push(todo);
 			}
 		});
-		angular.copy(incompleteTodos, $scope.todos);
+		angular.copy(incompletedTodos, $scope.todos);
 		$scope.saveToLocalStorage($scope.todos);
 	};
 	$scope.markAll = function (completed) {
